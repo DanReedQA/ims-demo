@@ -23,14 +23,14 @@ public class Ims {
 	public static final Logger LOGGER = Logger.getLogger(Ims.class);
 
 	public void imsSystem() {
-		LOGGER.info("What is your username");
+		LOGGER.info("Enter Username: ");
 		String username = Utils.getInput();
-		LOGGER.info("What is your password");
+		LOGGER.info("Enter Password: ");
 		String password = Utils.getInput();
 
 		init(username, password);
 
-		LOGGER.info("Which entity would you like to use?");
+		LOGGER.info("What would you like to edit?");
 		Domain.printDomains();
 
 		Domain domain = Domain.getDomain();
@@ -86,7 +86,7 @@ public class Ims {
 	 * @param password
 	 */
 	public void init(String username, String password) {
-		init("jdbc:mysql://localhost:3306/", username, password, "src/main/resources/sql-schema.sql");
+		init("jdbc:mysql://35.195.192.157	:3306/", username, password, "src/main/resources/sql-schema.sql");
 	}
 
 	public String readFile(String fileLocation) {
